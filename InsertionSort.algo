@@ -1,0 +1,18 @@
+ALGORITHM insertion_sort
+VAR
+    arr : ARRAY OF INTEGER := [28, 17, 1, 8, 12, 4, 7]
+    i : INTEGER
+    key : INTEGER
+    j : INTEGER
+BEGIN
+    FOR i := 1 TO (LENGTH(arr) - 1) STEP 1 DO
+        key := arr[i]
+        j := i - 1
+        WHILE (j >= 0 AND arr[j] > key) DO
+            arr[j + 1] := arr[j]
+            j := j - 1
+        END_WHILE
+        arr[j + 1] := key
+    END_FOR
+    Write("Tableau trié : ", arr)
+END
